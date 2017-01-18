@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'settings.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'skymarket_db',
+        'NAME': 'skymarket',
         'USER': 'skymarket_user',
         'PASSWORD': 'skymarket_pass',
         'HOST': '127.0.0.1',
