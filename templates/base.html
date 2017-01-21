@@ -1,0 +1,54 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=1200, initial-scale=0, user-scalable=no">
+        <meta name="description" content=""/>
+        <meta name="keywords" content=""/>
+        <link rel="canonical" href=""/>
+        <meta name="robots" content="">
+        <meta charset="utf-8">
+        <title>
+            {% block title %}
+                Главная
+            {% endblock %}
+        </title>
+        {% block main_styles %}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,700">
+            <link rel="icon" type="image/vnd.microsoft.icon" href="{% static "images/favicon.ico" %}">
+            <link rel="stylesheet" href="{% static "styles/normalize.css" %}">
+            <link rel="stylesheet" href="{% static "styles/libs.min.css" %}">
+            <link rel="stylesheet" href="{% static "styles/main.css" %}">
+        {% endblock %}
+        {% block extra_styles %}
+        {% endblock %}
+    </head>
+    <body class="container-fluid">
+        <div class="wrapper">
+            {% block layout %}
+            {% endblock %}
+        </div>
+        {% block main_scripts %}
+            <!-- SCRIPT -->
+            <script src="{% static "js/main.min.js" %}"></script>
+        {% endblock %}
+        {% block extra_scripts %}
+            <script>
+
+                // ----- slider -----
+                $(window).load(function() {
+                    $(".flexslider").flexslider({
+                        animation: "slide",
+                        directionNav: false,
+                        start: function(slider){
+                            $("body").removeClass("loading");
+                        }
+                    });
+                });
+            </script>
+        {% endblock %}
+    </body>
+</html>
